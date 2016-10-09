@@ -32,7 +32,7 @@
 <body>
    <img id="icon" src="imgs/flower.gif">
    <p id="word">你是我家小呀小多宝,怎么爱你都不嫌多,吼吼吼</p>
-   <p id="wait">spring,哈哈哈😀,再等5秒吧</p>
+   <p id="wait">spring,哈哈哈😁,再等5秒吧</p>
    <div id="number">4</div>
    <div id="number2">5</div>
 
@@ -64,7 +64,7 @@
                    if (number2.innerText == 0) {
 
                        clearInterval(timer2);
-
+                       number2.style.display = 'none'
                        wait.style.display = 'none'
                        // 显示 css + style
                        word.style.display = 'block';
