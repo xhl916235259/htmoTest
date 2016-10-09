@@ -24,18 +24,25 @@
             color: red;
             font-size: 100px;
         }
+        #number2 {
+            display: none;
+        }
     </style>
 </head>
 <body>
    <img id="icon" src="imgs/flower.gif">
-   <p id="word">我对你的爱滔滔不绝.....</p>
+   <p id="word">你是我家小呀小多宝,怎么爱你都不嫌多,吼吼吼</p>
+   <p id="wait">spring,哈哈哈😀,再等5秒吧</p>
    <div id="number">4</div>
+   <div id="number2">5</div>
 
    <script>
        // 1.拿到要操作的标签
        var img = document.getElementById('icon');
        var word = document.getElementById('word');
+       var wait = document.getElementById('wait');
        var number = document.getElementById('number');
+       var number2 = document.getElementById('number2');
 
        // 2.设置定时器
        var timer = setInterval(function () {
@@ -45,11 +52,30 @@
            if (number.innerText == 0){
                // 清除定时器
                clearInterval(timer);
-               // 显示 css + style
-               word.style.display = 'block';
-               img.style.display = 'inline-block';
                // 隐藏number
                number.style.display = 'none';
+               number2.style.display = 'block'
+               wait.style.display = 'block'
+
+               var timer2 = setInterval(function () {
+
+                   number2.innerText -= 1;
+
+                   if (number2.innerText == 0) {
+
+                       clearInterval(timer2);
+
+                       wait.style.display = 'none'
+                       // 显示 css + style
+                       word.style.display = 'block';
+                       img.style.display = 'inline-block';
+
+                   }
+
+
+               },1000);
+
+
            }
        }, 1000);
    </script>
